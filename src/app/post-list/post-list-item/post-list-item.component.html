@@ -3,18 +3,19 @@
                 'list-group-item-danger': getLoveits() < 0}">
   <h4 style="font-weight: bold;">
   	{{ getTitle() }}
+  	<button style="margin:10px;" class="btn btn-default pull-right" (click)="onDeletePost(post)">
+            <span class="glyphicon glyphicon-minus"></span>
+    </button>
   	<span style="float:right;"><em style="font-weight: normal;">{{ getCreatedAt() | date: 'dd/MM/y, hh:mm' }}</em></span>
   </h4>
   <h5>{{ getContent() }}</h5>
   <div>
   	<button style="margin:5px;"
   			class="btn btn-success" 
-    		[disabled]="!isAuth"
     		(click)="onAjouterLike()">Love it!</button>
 
   	<button style="margin:5px;"
   			class="btn btn-danger" 
-  			[disabled]="!isAuth"
   			(click)="onRetirerLike()">Don't love it!</button>
   </div>
 </li>
